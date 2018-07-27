@@ -3,7 +3,7 @@ require "formula"
 class Fed < Formula
   desc "CLI to deploy Frontend modules"
   homepage "https://github.com/spotim/fed-cli"
-  url "https://github.com/SpotIM/fed-cli/archive/v0.1.1.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+  url "https://github.com/SpotIM/fed-cli/releases/download/v0.1.1/fed-cli-darwin-amd64", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
   sha256 "2f0007a1372f44628e988b1eaeb58fffc12582eb"
 
   # depends_on "cmake" => :build
