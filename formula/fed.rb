@@ -21,8 +21,8 @@ class Fed < Formula
     #   system "go", "build", "-o", bin/"fed", "."
     # end
     
-    system "chmod", "+x", "fed-*"
-    system "mv", "fed-*", "/usr/local/bin/fed"
+    system "chmod", "+x", "fed-64.1"
+    system "mv", "fed-64.1", "/usr/local/bin/fed"
   end
 
   # Homebrew requires tests.
