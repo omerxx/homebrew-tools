@@ -21,8 +21,8 @@ class Fed < Formula
     #   system "go", "build", "-o", bin/"fed", "."
     # end
     
-    system "chmod", "+x", "fed-cli-darwin-amd64"
-    system "mv", "fed-cli-darwin-amd64", "/usr/local/bin/fed"
+    system "chmod", "+x", "fed-*"
+    system "mv", "fed-*", "/usr/local/bin/fed"
   end
 
   # Homebrew requires tests.
