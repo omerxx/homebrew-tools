@@ -4,22 +4,25 @@ class Fed < Formula
   desc "CLI to deploy Frontend modules"
   homepage "https://github.com/spotim/fed-cli"
   url "https://github.com/SpotIM/fed-cli/releases/download/v0.1.1/fed-cli-darwin-amd64", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-  sha256 "2f0007a1372f44628e988b1eaeb58fffc12582eb"
+  sha256 "caa9058ab48328baf8d2fdc95ab965636d61bc3e7f8eae07f8b21a52517ee938"
 
   # depends_on "cmake" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
+    # ENV["GOPATH"] = buildpath
 
-    bin_path = buildpath/"src/github.com/spotim/fed-cli"
-    # Copy all files from their current location (GOPATH root)
-    # to $GOPATH/src/github.com/spotim/fed-cli
-    bin_path.install Dir["*"]
-    cd bin_path do
-      # Install the compiled binary into Homebrew's `bin` - a pre-existing
-      # global variable
-      system "go", "build", "-o", bin/"fed", "."
-    end
+    # bin_path = buildpath/"src/github.com/spotim/fed-cli"
+    # # copy all files from their current location (gopath root)
+    # # to $gopath/src/github.com/spotim/fed-cli
+    # bin_path.install dir["*"]
+    # cd bin_path do
+    #   # install the compiled binary into homebrew's `bin` - a pre-existing
+    #   # global variable
+    #   system "go", "build", "-o", bin/"fed", "."
+    # end
+    
+    system "chmod", "+x", "fed-cli-darwin-amd64"
+    system "mv", "fed-cli-darwin-amd64", "/usr/local/bin/fed"
   end
 
   # Homebrew requires tests.
