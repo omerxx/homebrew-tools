@@ -20,7 +20,9 @@ class Fed < Formula
     #   # global variable
     #   system "go", "build", "-o", bin/"fed", "."
     # end
-    
+    system "pwd"
+    system "ls", "-lat"
+     
     system "chmod", "+x", "fed-64.1"
     system "mv", "fed-64.1", "/usr/local/bin/fed"
   end
