@@ -3,31 +3,29 @@ require "formula"
 class Fed < Formula
   desc "CLI to deploy Frontend modules"
   homepage "https://github.com/spotim/fed-cli"
-  url "https://github.com/SpotIM/fed-cli/releases/download/v0.1.1/fed-cli-darwin-amd64", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+  url "https://github.com/SpotIM/fed-cli/archive/v0.1.1.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
   sha256 "5ec7bf41d6f779dacce00c37a649039640edbefc201f2b8e0e8dc5de7489ba08"
+  head "https://github.com/spotim/fed-cli.git"
 
   # depends_on "cmake" => :build
 
   def install
-    # ENV["GOPATH"] = buildpath
+     ENV["GOPATH"] = buildpath
 
-    # bin_path = buildpath/"src/github.com/spotim/fed-cli"
-    # # copy all files from their current location (gopath root)
-    # # to $gopath/src/github.com/spotim/fed-cli
-    # bin_path.install dir["*"]
-    # cd bin_path do
-    #   # install the compiled binary into homebrew's `bin` - a pre-existing
-    #   # global variable
-    #   system "go", "build", "-o", bin/"fed", "."
-    # end
-    #
-    tmp_path = "/tmp"
-    tmp_path.install Dir["*"]
+     bin_path = buildpath/"src/github.com/spotim/fed-cli"
+     # copy all files from their current location (gopath root)
+     # to $gopath/src/github.com/spotim/fed-cli
+     bin_path.install dir["*"]
+     cd bin_path do
+       # install the compiled binary into homebrew's `bin` - a pre-existing
+       # global variable
+       system "go", "build", "-o", bin/"fed", "."
+     end
+    
 
-    cd tmp_path do 
-      system "chmod", "+x", "fed-64.1"
-      system "mv", "fed-64.1", "/usr/local/bin/fed"
-    end
+    # system "chmod", "+x", "fed-64.1"
+    # system "mv", "fed-64.1", "/usr/local/bin/fed"
+
   end
 
   # Homebrew requires tests.
