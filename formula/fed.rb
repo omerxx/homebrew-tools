@@ -22,7 +22,7 @@ class Fed < Formula
     # end
     #
     tmp_path = "/tmp"
-    tmp_path.install dir["*"]
+    tmp_path.install Dir["*"]
 
     cd tmp_path do 
       system "chmod", "+x", "fed-64.1"
