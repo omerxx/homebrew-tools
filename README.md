@@ -7,7 +7,7 @@ Either prefix it with the `brew install` command or `export` it to your environm
 Then:
 
 ```
-brew tap omerxx/tools/fed  
+brew tap spotim/tools/fed  
   
 brew install fed
 ```
