@@ -7,7 +7,4 @@ Either prefix it with the `brew install` command or `export` it to your environm
 Then:
 
 ```
-brew tap spotim/tools
-  
-brew install fed
 ```
